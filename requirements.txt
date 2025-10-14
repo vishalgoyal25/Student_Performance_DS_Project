@@ -1,0 +1,19 @@
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
+Flask
+ipykernel
+dill
+
+lightgbm
+category_encoders
+
+-e .
+# Commenting it because, 
+# once the Project has been Built by running setup.py,
+# no need to run it again and again.
+# (It only needs to run once, to trigger setup.py file)
