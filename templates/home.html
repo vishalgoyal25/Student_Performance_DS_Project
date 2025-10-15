@@ -1,0 +1,85 @@
+<html>
+<body style="background-color: #f5f5f5; font-family: Arial, sans-serif;">
+
+    <div style="max-width: 700px; margin: 40px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h1 style="text-align: center;">Student Exam Performance Indicator</h1>
+
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <fieldset style="width: 70%; margin: 20px auto; text-align: left; font-size: 18px;">
+
+
+                <legend style="font-size: 20px; font-weight: bold; margin-bottom: 10px; text-align:center;">Student Exam Performance Prediction</legend>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Gender:</label>
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Race or Ethnicity:</label>
+                    <select name="ethnicity" required>
+                        <option value="" disabled selected>Select Ethnicity</option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Parental Education:</label>
+                    <select name="parental_level_of_education" required>
+                        <option value="" disabled selected>Select Education</option>
+                        <option value="associate's degree">associate's degree</option>
+                        <option value="bachelor's degree">bachelor's degree</option>
+                        <option value="high school">high school</option>
+                        <option value="master's degree">master's degree</option>
+                        <option value="some college">some college</option>
+                        <option value="some high school">some high school</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Lunch Type:</label>
+                    <select name="lunch" required>
+                        <option value="" disabled selected>Select Lunch Type</option>
+                        <option value="free/reduced">free/reduced</option>
+                        <option value="standard">standard</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Test Prep Course:</label>
+                    <select name="test_preparation_course" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="none">None</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Writing Score:</label>
+                    <input type="number" name="writing_score" placeholder="0–100" min="0" max="100" required>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label>Reading Score:</label>
+                    <input type="number" name="reading_score" placeholder="0–100" min="0" max="100" required>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <input type="submit" value="Predict Maths Score" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                </div>
+            </fieldset>
+        </form>
+
+        <h2 style="text-align:center; margin-top: 20px;">Prediction for Maths Score is :- {{ results }}</h2>
+    </div>
+
+</body>
+</html>
